@@ -8,7 +8,7 @@ const stats = [
 export default function StatsSection() {
   return (
     <section className="bg-white py-8 md:py-12">
-      <div className="w-[80%] mx-auto">
+      <div className="w-[90%] md:w-[68%] mx-auto">
         <div className="grid grid-cols-2 md:grid-cols-4">
           {stats.map((stat, i) => {
             // Mobile (2-col): right border on col 0 (i%2===0), bottom border on row 0 (i<2)

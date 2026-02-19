@@ -88,7 +88,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero images — 80% width centered */}
-      <div className="relative z-10 w-[80%] mx-auto pb-10">
+      <div className="relative z-10 w-[90%] md:w-[68%] mx-auto pb-10">
         <div className="grid grid-cols-2 gap-3">
           {/* Image 1 – Lawyers shaking hands */}
           <div className="relative w-full h-40 md:h-96 rounded-2xl overflow-hidden shadow-xl">
