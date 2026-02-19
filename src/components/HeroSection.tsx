@@ -32,11 +32,10 @@ export default function HeroSection() {
       />
 
       {/* ───── Content ───── */}
-      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-16 pb-8 max-w-4xl mx-auto w-full">
+      <div className="relative z-10 flex flex-col items-center text-center px-6 pt-14 pb-10 max-w-2xl mx-auto w-full">
 
         {/* Trusted badge */}
-        <div className="inline-flex items-center gap-2.5 bg-white border border-gray-200 rounded-full px-4 py-2 shadow-sm mb-8">
-          {/* Overlapping avatars */}
+        <div className="inline-flex items-center gap-2.5 bg-white border border-gray-200 rounded-full px-4 py-2 shadow-sm mb-7">
           <div className="flex -space-x-2">
             {avatars.map((avatar, i) => (
               <div
@@ -53,12 +52,12 @@ export default function HeroSection() {
             ))}
           </div>
           <span className="text-sm font-medium text-gray-600">
-            Trusted by <span className="text-[#2D3674] font-semibold">2k+</span>
+            Trusted by <span className="text-[#575D90] font-semibold">2k+</span>
           </span>
         </div>
 
         {/* Headline */}
-        <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-[#1e2a5e] mb-6">
+        <h1 className="text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight text-[#1e2a5e] mb-5">
           Protecting Your Rights,
           <br />
           Defending{" "}
@@ -66,31 +65,33 @@ export default function HeroSection() {
         </h1>
 
         {/* Sub-text */}
-        <p className="text-lg text-gray-500 max-w-xl mb-10 leading-relaxed">
+        <p className="text-base text-gray-500 max-w-md mb-8 leading-relaxed">
           Experienced legal counsel committed to fighting for
           <br className="hidden sm:block" /> the best outcome in your case.
         </p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-4 mb-14">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
           <Link
             href="#case-review"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-[#2D3674] text-white text-sm font-semibold hover:bg-[#232c5e] transition-colors duration-200 shadow-md"
+            className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-[#575D90] text-white text-sm font-semibold hover:bg-[#454870] transition-colors duration-200 shadow-md"
           >
             Free Case Review
           </Link>
           <Link
             href="#contact"
-            className="inline-flex items-center justify-center px-8 py-3.5 rounded-full border-2 border-[#2D3674] text-[#2D3674] text-sm font-semibold hover:bg-[#2D3674] hover:text-white transition-colors duration-200"
+            className="inline-flex items-center justify-center px-7 py-3 rounded-full border-2 border-[#575D90] text-[#575D90] text-sm font-semibold hover:bg-[#575D90] hover:text-white transition-colors duration-200"
           >
             Call Now
           </Link>
         </div>
+      </div>
 
-        {/* Hero images */}
-        <div className="grid grid-cols-2 gap-4 w-full mt-2">
-          {/* Image 1 – Lawyers shaking hands — add your file to /public/hero-1.jpg */}
-          <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden shadow-xl">
+      {/* Hero images — 80% width centered */}
+      <div className="relative z-10 w-[80%] mx-auto pb-10">
+        <div className="grid grid-cols-2 gap-3">
+          {/* Image 1 – Lawyers shaking hands */}
+          <div className="relative w-full h-40 md:h-96 rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/hero-1.jpg"
               alt="Lawyers shaking hands"
@@ -101,8 +102,8 @@ export default function HeroSection() {
             <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent" />
           </div>
 
-          {/* Image 2 – Gavel — add your file to /public/hero-2.jpg */}
-          <div className="relative w-full aspect-4/3 rounded-2xl overflow-hidden shadow-xl">
+          {/* Image 2 – Gavel */}
+          <div className="relative w-full h-40 md:h-96 rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/hero-2.jpg"
               alt="Judge gavel on desk"

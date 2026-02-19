@@ -31,7 +31,7 @@ export default function Navbar() {
             <li key={link.label}>
               <Link
                 href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-[#2D3674] transition-colors duration-200"
+                className="text-sm font-medium text-gray-700 hover:text-[#575D90] transition-colors duration-200"
               >
                 {link.label}
               </Link>
@@ -42,7 +42,7 @@ export default function Navbar() {
         {/* CTA Button */}
         <Link
           href="#consultation"
-          className="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#2D3674] text-white text-sm font-semibold hover:bg-[#232c5e] transition-colors duration-200 shadow-sm"
+          className="hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-[#575D90] text-white text-sm font-semibold hover:bg-[#454870] transition-colors duration-200 shadow-sm"
         >
           Free Consultation
         </Link>
