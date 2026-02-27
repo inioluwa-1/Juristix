@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 const steps = [
   {
     number: "1",
@@ -21,15 +24,25 @@ export default function HowItWorks() {
     <section id="how-it-works" className="bg-[#f0f4ff] py-16 md:py-24">
       <div className="w-[90%] md:w-[68%] mx-auto">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#1e2a5e] mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="text-3xl md:text-4xl font-extrabold text-center text-[#1e2a5e] mb-12"
+        >
           How it Works
-        </h2>
+        </motion.h2>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {steps.map((step) => (
-            <div
+          {steps.map((step, i) => (
+            <motion.div
               key={step.number}
+              initial={{ opacity: 0, y: 36 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.12 }}
               className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col"
             >
               {/* Top — textured box with number */}
@@ -70,7 +83,7 @@ export default function HowItWorks() {
                 <h3 className="text-lg font-bold text-[#1e2a5e] mb-2">{step.title}</h3>
                 <p className="text-sm text-gray-400 leading-relaxed">{step.desc}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

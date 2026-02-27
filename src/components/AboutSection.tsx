@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
   return (
@@ -8,7 +10,13 @@ export default function AboutSection() {
         <div className="bg-[#575D90] rounded-3xl px-6 py-12 md:px-10 md:py-14 flex flex-col md:flex-row items-center gap-12">
 
           {/* Left — Text */}
-          <div className="flex-1 text-white">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="flex-1 text-white"
+          >
             <h2 className="text-3xl md:text-4xl font-extrabold mb-8 leading-tight">
               Advocates You Can Trust
             </h2>
@@ -29,10 +37,16 @@ export default function AboutSection() {
             >
               Free Consultation
             </Link>
-          </div>
+          </motion.div>
 
           {/* Right — Hexagon image */}
-          <div className="flex-1 flex items-center justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+            className="flex-1 flex items-center justify-center"
+          >
             <div className="relative w-72 h-72 md:w-80 md:h-80">
 
               {/* SVG: gold rounded-hexagon outline + clipPath definition */}
@@ -109,7 +123,7 @@ export default function AboutSection() {
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
       </div>

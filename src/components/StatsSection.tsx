@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 const stats = [
   { value: "2k+", label: "Cases Done" },
   { value: "3k+", label: "Clients Helped" },
@@ -20,8 +23,12 @@ export default function StatsSection() {
             ].join(" ");
 
             return (
-              <div
+              <motion.div
                 key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
                 className={`flex flex-col items-center justify-center py-5 md:py-8 px-2 md:px-4 ${borderClasses}`}
               >
                 <span className="text-2xl md:text-5xl font-bold text-gray-900 tracking-tight">
@@ -30,7 +37,7 @@ export default function StatsSection() {
                 <span className="mt-1 text-xs md:text-sm text-gray-400 font-medium text-center">
                   {stat.label}
                 </span>
-              </div>
+              </motion.div>
             );
           })}
         </div>

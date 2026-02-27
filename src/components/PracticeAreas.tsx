@@ -1,3 +1,6 @@
+"use client";
+import { motion } from "framer-motion";
+
 const practices = [
   {
     icon: (
@@ -66,16 +69,27 @@ export default function PracticeAreas() {
     <section id="practice-areas" className="bg-[#f0f4ff] py-16 md:py-24">
       <div className="w-[90%] md:w-[68%] mx-auto">
         {/* Heading */}
-        <h2 className="text-3xl md:text-4xl font-extrabold text-center text-[#1e2a5e] mb-12">
+        <motion.h2
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.55, ease: "easeOut" }}
+          className="text-3xl md:text-4xl font-extrabold text-center text-[#1e2a5e] mb-12"
+        >
           Our Practice Areas
-        </h2>
+        </motion.h2>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {practices.map((item) => (
-            <div
+          {practices.map((item, i) => (
+            <motion.div
               key={item.title}
-              className={`relative rounded-2xl p-7 flex flex-col items-center text-center shadow-sm overflow-hidden transition-transform duration-200 hover:-translate-y-1 ${
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.08 }}
+              whileHover={{ y: -6, transition: { duration: 0.2 } }}
+              className={`relative rounded-2xl p-7 flex flex-col items-center text-center shadow-sm overflow-hidden ${
                 item.featured
                   ? "bg-[#787DA6] text-white"
                   : "bg-white text-gray-800"
@@ -120,7 +134,7 @@ export default function PracticeAreas() {
               >
                 {item.desc}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

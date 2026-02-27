@@ -1,9 +1,17 @@
+"use client";
+import { motion } from "framer-motion";
+
 export default function CTASection() {
   return (
     <section className="bg-[#f0f4ff] pb-16 md:pb-24">
       <div className="w-[90%] md:w-[68%] mx-auto">
-        {/* CTA card */}
-        <div className="relative overflow-hidden rounded-3xl bg-[#575D90] px-8 py-16 md:py-20 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
+          className="relative overflow-hidden rounded-3xl bg-[#575D90] px-8 py-16 md:py-20 text-center"
+        >
           {/* Decorative swirl circles */}
           <div className="absolute -top-16 -left-16 w-64 h-64 rounded-full border border-white/10" />
           <div className="absolute -top-8 -left-8 w-48 h-48 rounded-full border border-white/10" />
@@ -25,7 +33,7 @@ export default function CTASection() {
               Free Consultation
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
